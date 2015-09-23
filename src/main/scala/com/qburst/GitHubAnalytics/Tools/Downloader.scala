@@ -31,4 +31,21 @@ object Downloader {
 			in.close()
 		}
 	}
+
+	// http://data.githubarchive.org/2015-01-{01..30}-{0..23}.json.gz
+
+	def main(args: Array[String]): Unit = {
+		val root: String = "http://data.githubarchive.org/"
+		val tail: String = ".json.gz"
+		val directory: String = args(0)
+
+		for(day <- Range.apply(1, 5)) {
+			for(hour <- Range.apply(0,24)) {
+				val gzipFileName = "2015-01-" + f"$day%02d-" + hour + tail
+				val saveTo = directory + gzipFileName
+				println("Downloading " + root + gzipFileName)
+				download(root+gzipFileName, saveTo)
+			}
+		}
+	}
 }
