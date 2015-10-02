@@ -17,8 +17,7 @@ class PullRequest( pull_request_url: String,
                    pull_request_closed_at: String,
                    pull_request_merged_at: String,
                    pull_request_merge_commit_sha: String,
-                   pull_request_assignee: String,
-                   pull_request_milestone: String,
+                   pull_request_assignee: User,
                    pull_request_commits_url: String,
                    pull_request_review_comments_url: String,
                    pull_request_review_comment_url: String,
@@ -29,7 +28,7 @@ class PullRequest( pull_request_url: String,
                    pull_request_merged: String,
                    pull_request_mergeable: String,
                    pull_request_mergeable_state: String,
-                   pull_request_merged_by: String,
+                   pull_request_merged_by: User,
                    pull_request_comments: String,
                    pull_request_review_comments: String,
                    pull_request_commits: String,
@@ -54,8 +53,7 @@ class PullRequest( pull_request_url: String,
   var closed_at: String = pull_request_closed_at
   var merged_at: String = pull_request_merged_at
   var merge_commit_sha: String = pull_request_merge_commit_sha
-  var assignee: String = pull_request_assignee
-  var milestone: String = pull_request_milestone
+  var assignee: User = pull_request_assignee
   var commits_url: String = pull_request_comments_url
   var review_comments_url: String = pull_request_review_comments_url
   var review_comment_url: String =  pull_request_review_comments_url
@@ -66,7 +64,7 @@ class PullRequest( pull_request_url: String,
   var merged: String = pull_request_merged
   var mergeable: String = pull_request_mergeable
   var mergeable_state: String = pull_request_mergeable_state
-  var merged_by: String = pull_request_merged_by
+  var merged_by: User = pull_request_merged_by
   var comments: String = pull_request_comments
   var review_comments: String = pull_request_review_comments
   var commits: String = pull_request_commits
